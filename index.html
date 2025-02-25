@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MRT TRAIN GUIDE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-top: 20px;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .ticket-form {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .ticket-form label {
+            margin: 10px 0;
+            display: block;
+        }
+
+        .ticket-form select {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .ticket-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .ticket-form button:hover {
+            background-color: #45a049;
+        }
+
+        .ticket-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .ticket-info img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            nav a {
+                font-size: 16px;
+            }
+
+            .ticket-info img {
+                max-width: 80%; 
+            }
+        }
+
+        
+        .image-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .ticket-form {
+            max-width: 500px; 
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>MRT LINE 3 FARE GUIDE</h1>
+    </header>
+
+    <nav>
+        <img src="train.jpeg" alt="MRT Train Icon" height="30px" width="30px">
+        <a href="index.html">Home</a>
+        <a href="page2.html">Help</a>
+        <a href="page3.html">Train Schedule</a>
+    </nav>
+
+    
+
+    <div class="container">
+        <section id="home">
+            <h2 class="section-title">MRT Line 3 Fare Guide</h2>
+            <p>Welcome to the MRT Line 3 fare guide!</p>
+        </section>
+
+        <div class="row">
+         
+            <div class="col-lg-6 col-md-6 image-container">
+                <img src="ss.jpg" alt="MRT Train" height="550px" width="550px">
+            </div>
+
+            
+            <div class="col-lg-6 col-md-6 form-container">
+                <div class="ticket-form">
+                    <h2>Select Discount</h2>
+                    <form id="ticket-form-submit">
+                        <label for="discount">Choose a Discount:</label>
+                        <select id="discount" aria-label="Choose a discount option">
+                            <option value="0">None</option>
+                            <option value="0.2">PWD/Student</option>
+                            <option value="0.2">Senior Citizen</option>
+                        </select>
+                        <br><br>
+
+                        <button type="submit" id="submit-btn">Submit</button>
+                    </form>
+
+                    <div class="ticket-info" id="ticket-info" style="display:none;">
+                        <h3>Your Ticket Details:</h3>
+                        <label>Your Ticket is Here!</label>
+                        <img src="tick.jpeg.png" alt="Ticket Image">
+                        <br>
+                        <button id="print-ticket">Print Ticket</button>
+                        <br>
+                        <button onclick="window.location.reload();">Buy More Tickets</button>
+                    </div>
+
+                    <div id="final-price-info" style="display:none;">
+                        <h4>Your final price is: ₱<span id="final-price">0</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Your Name: Victor Buenvenida and Jaedin Sarao</p>
+        <p>Grade: 9</p>
+        <p>Section: Sapphire</p>
+        <p>Source: nothing yet</p>
+    </footer>
+
+    <script>
+        document.getElementById("ticket-form-submit").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var discount = parseFloat(document.getElementById("discount").value);
+
+            
+            var finalPrice = 28 - (28 * discount);
+
+            document.getElementById("final-price").textContent = finalPrice.toFixed(2);
+            document.getElementById("final-price-info").style.display = "block";
+
+            
+            var submitButton = document.getElementById("submit-btn");
+            submitButton.textContent = "Processing...";
+            submitButton.disabled = true;
+
+            
+            document.getElementById("ticket-info").style.display = "block";
+        });
+
+        document.getElementById("print-ticket").addEventListener("click", function() {
+            window.print();
+        });
+    </script>
+
+</body>
+</html>
