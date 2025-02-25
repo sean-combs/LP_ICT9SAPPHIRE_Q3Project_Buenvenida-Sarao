@@ -24,20 +24,20 @@
         nav {
             background-color: #444;
             padding: 10px 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         nav img {
             margin-bottom: 10px;
         }
 
-        nav .navbar-nav {
-            text-align: center;
-        }
-
         nav a {
             color: white;
             text-decoration: none;
-            margin: 10px 20px;
+            margin: 10px 0;
             font-size: 18px;
         }
 
@@ -94,29 +94,11 @@
         <h1>MRT Line 3 Train Schedule</h1>
     </header>
 
-    <!-- Updated Navbar with Bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="train.jpeg" alt="Train Logo" height="30px" width="30px">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav d-flex align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="page2.html">Help</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="page3.html">Train Schedule</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <nav>
+        <img src="train.jpeg" height="30px" width="30px">
+        <a href="index.html">Home</a>
+        <a href="page2.html">Help</a>
+        <a href="page3.html">Train Schedule</a>
     </nav>
 
     <div class="container">
@@ -159,5 +141,5 @@
 
 </html>
 
+
      
-               
