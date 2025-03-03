@@ -27,6 +27,27 @@
             justify-content: space-between;
             align-items: center;
         }
+        .nav-bar input {
+            padding: 5px;
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        .nav-bar button {
+            padding: 5px 10px;
+            background-color: orange;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
         .fare-guide {
             text-align: center;
             margin: 20px auto;
@@ -45,9 +66,6 @@
             text-align: center;
             border-radius: 8px;
             margin-top: 20px;
-        }
-        .fare-buttons {
-            margin-top: 10px;
         }
     </style>
     <script>
@@ -74,7 +92,7 @@
             });
         }
 
-        function calculateFare(discounted = false) {
+        function calculateFare() {
             let from = document.getElementById("from").selectedIndex;
             let to = document.getElementById("to").selectedIndex;
             let priceDisplay = document.querySelector(".ticket-price");
@@ -87,31 +105,31 @@
             let distance = Math.abs(from - to);
             let fare = 13 + (distance * 1.5);
             if (fare > 28) fare = 28;
-            if (discounted) fare *= 0.8;
             
             priceDisplay.textContent = `₱${fare.toFixed(2)}`;
         }
         
         document.addEventListener("DOMContentLoaded", () => {
             populateStations();
-            document.getElementById("from").addEventListener("change", () => calculateFare());
-            document.getElementById("to").addEventListener("change", () => calculateFare());
-            document.getElementById("regularFare").addEventListener("click", () => calculateFare(false));
-            document.getElementById("discountedFare").addEventListener("click", () => calculateFare(true));
+            document.getElementById("from").addEventListener("change", calculateFare);
+            document.getElementById("to").addEventListener("change", calculateFare);
         });
     </script>
 </head>
 <body>
     <header>MRT Fare Guide</header>
     <div class="nav-bar">
-        <img src="train.jpeg" alt="Train Logo" height="30px">
+        <img src="train-icon.png" alt="Train Logo" height="30px">
+        <a href="index.html">Home</a>
+        <a href="page2.html">Help</a>
+        <a href="page3.html">Train Schedule</a>
         <input type="text" placeholder="Search...">
         <button>Search</button>
     </div>
     <div class="container text-center">
         <div class="row">
             <div class="col-md-6">
-                <img src="ss.jpg" alt="MRT Map" class="img-fluid">
+                <img src="map.png" alt="MRT Map" class="img-fluid">
             </div>
             <div class="col-md-6 fare-guide">
                 <h3>Fare Guide</h3>
@@ -123,14 +141,9 @@
                 <select id="to" class="form-control">
                     <option>Select Station</option>
                 </select>
-                <div class="fare-buttons">
-                    <button id="regularFare" class="btn btn-primary">Regular Fare</button>
-                    <button id="discountedFare" class="btn btn-secondary">Discounted Fare</button>
-                </div>
                 <div class="ticket-price">₱0.00</div>
             </div>
         </div>
     </div>
 </body>
 </html>
-
