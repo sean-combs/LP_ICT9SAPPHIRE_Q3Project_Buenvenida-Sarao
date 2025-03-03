@@ -24,6 +24,13 @@
             background-color: #87CEEB;
             padding: 10px;
             text-align: center;
+            margin-bottom: 20px;
+        }
+        .nav-bar a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
         }
         .nav-bar input {
             padding: 5px;
@@ -46,21 +53,24 @@
             border-radius: 8px;
             margin-top: 20px;
         }
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
-     <nav>
-         <img src="train.jpeg" height="30px" width="30px">
- <a href="index.html">Home</a>
-    <a href="page2.html">Help</a>
-    <a href="page3.html">Train Schedule</a>
     
-    <header>MRT Fare Guide</header>
     <div class="nav-bar">
-        <input type="text" placeholder="Search...">
-        <button>Search</button>
+        <a href="index.html">Home</a>
+        <a href="page2.html">Help</a>
+        <a href="page3.html">Train Schedule</a>
     </div>
+
+
+    <header>MRT Fare Guide</header>
+
+
     <div class="container text-center">
         <div class="row">
             <div class="col-md-6">
@@ -69,11 +79,11 @@
             <div class="col-md-6 fare-guide">
                 <h3>Fare Guide</h3>
                 <label for="from">Leaving From:</label>
-                <select id="from" class="form-control">
+                <select id="from" class="form-control mb-3">
                     <option>Select Station</option>
                 </select>
                 <label for="to">Going To:</label>
-                <select id="to" class="form-control">
+                <select id="to" class="form-control mb-3">
                     <option>Select Station</option>
                 </select>
                 <div class="ticket-price">28.00</div>
@@ -82,4 +92,3 @@
     </div>
 </body>
 </html>
-
