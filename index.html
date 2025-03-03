@@ -23,17 +23,30 @@
         .nav-bar {
             background-color: #87CEEB;
             padding: 10px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .nav-bar a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .nav-bar input {
             padding: 5px;
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        .nav-bar button {
+            padding: 5px 10px;
+            background-color: orange;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .nav-bar a:hover {
+            text-decoration: underline;
         }
         .fare-guide {
             text-align: center;
@@ -42,6 +55,7 @@
             background-color: #f4f4f4;
             max-width: 800px;
             border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .ticket-price {
             font-size: 48px;
@@ -53,24 +67,18 @@
             border-radius: 8px;
             margin-top: 20px;
         }
-        .nav-bar a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-
-    
+    <header>MRT Fare Guide</header>
     <div class="nav-bar">
+        <img src="train.jpeg" alt="MRT Train Icon" height="30px" width="30px">
         <a href="index.html">Home</a>
         <a href="page2.html">Help</a>
         <a href="page3.html">Train Schedule</a>
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
     </div>
-
-
-    <header>MRT Fare Guide</header>
-
-
     <div class="container text-center">
         <div class="row">
             <div class="col-md-6">
@@ -79,16 +87,17 @@
             <div class="col-md-6 fare-guide">
                 <h3>Fare Guide</h3>
                 <label for="from">Leaving From:</label>
-                <select id="from" class="form-control mb-3">
+                <select id="from" class="form-control">
                     <option>Select Station</option>
                 </select>
                 <label for="to">Going To:</label>
-                <select id="to" class="form-control mb-3">
+                <select id="to" class="form-control">
                     <option>Select Station</option>
                 </select>
-                <div class="ticket-price">28.00</div>
+                <div class="ticket-price">₱28.00</div>
             </div>
         </div>
     </div>
 </body>
 </html>
+
