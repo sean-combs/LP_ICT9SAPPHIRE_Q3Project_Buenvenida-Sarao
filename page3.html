@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Train Schedule - MRT Line 3 Fare Guide</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>MRT LINE 3 SUPPORT</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"; rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,7 +21,7 @@
             text-align: center;
         }
 
-          nav {
+        nav {
             background-color: #444;
             padding: 10px 0;
             text-align: center;
@@ -32,11 +32,6 @@
             text-decoration: none;
             margin: 0 20px;
             font-size: 18px;
-        }
-
-        nav img {
-            margin-bottom: 10px;
-            align-items: center;
         }
 
         nav a:hover {
@@ -64,80 +59,83 @@
             margin: 5px 0;
         }
 
-        table {
+        .feedback-section {
+            margin-top: 30px;
+        }
+
+        .feedback-section label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .feedback-section textarea {
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #333;
             padding: 10px;
-            text-align: center;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
 
-        th {
-            background-color: #f4f4f4;
+        .feedback-section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
         }
 
-        .vertical-table th, .vertical-table td {
-            padding: 15px;
-            text-align: left;
+        .feedback-section button:hover {
+            background-color: #45a049;
+        }
+
+        .contact-section {
+            margin-top: 30px;
         }
     </style>
 </head>
 
 <body>
+   
     <header>
-        <h1>MRT Line 3 Train Schedule</h1>
+        <h1>MRT Line 3 Help</h1>
     </header>
 
-    <nav>
-        <img src="train.jpeg" height="30px" width="30px">
-        <a href="index.html">Home</a>
-        <a href="page2.html">Help</a>
-        <a href="page3.html">Train Schedule</a>
-    </nav>
-
+  
+           <nav>
+         <img src="train.jpeg" height="30px" width="30px">
+ <a href="index.html">Home</a>
+    <a href="page2.html">Help</a>
+    <a href="page3.html">Train Schedule</a>
+   
+ </nav>
+    
     <div class="container">
-        <h2 class="section-title">MRT Line 3 Train Timetable</h2>
-        <p>The following is the train schedule for MRT Line 3.</p>
+      
+        <section class="feedback-section">
+            <h2 class="section-title">Your Feedback</h2>
+            <p>We value your feedback to improve our services. Please provide any comments or suggestions below:</p>
+            <form action="#" method="post">
+                <label for="comments">Your Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Enter your feedback here"></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
 
-        <table class="vertical-table">
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th>North Avenue Station</th>
-                    <th>Taft Avenue Station</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Weekdays</td>
-                    <td>4:36 AM (First) - 9:30 PM (Last)</td>
-                    <td>5:18 AM (First) - 10:11 PM (Last)</td>
-                </tr>
-                <tr>
-                    <td>Saturdays</td>
-                    <td>4:37 AM (First) - 9:30 PM (Last)</td>
-                    <td>5:18 AM (First) - 10:08 PM (Last)</td>
-                </tr>
-                <tr>
-                    <td>Sundays/Holidays</td>
-                    <td>4:38 AM (First) - 9:30 PM (Last)</td>
-                    <td>5:19 AM (First) - 10:09 PM (Last)</td>
-                </tr>
-            </tbody>
-        </table>
+        
+        <section id="contact" class="contact-section">
+            <h3 class="section-title">Contact Us</h3>
+            <p>If you have any questions, feel free to contact us!</p>
+            <p>Email: support@gmail.com</p>
+            <p>Phone: 987-654-3210</p>
+        </section>
     </div>
 
+    
     <footer class="footer">
         <p>Contact us: support@gmail.com</p>
         <p>Phone: 987-654-3210</p>
     </footer>
+
 </body>
 
-</html>
-
-
-     
+</html> 
